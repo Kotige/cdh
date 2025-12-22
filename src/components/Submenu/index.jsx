@@ -8,15 +8,16 @@ export default function Submenu() {
 
     const searchRef = useRef(null);
     const inputRef = useRef(null);
+    const storiesRef = useRef(null);
 
-    // Auto focus ao abrir
+    // Auto focus ao abrir busca
     useEffect(() => {
         if (searchOpen && inputRef.current) {
             inputRef.current.focus();
         }
     }, [searchOpen]);
 
-    // Fechar ao clicar fora
+    // Fechar busca e dropdown ao clicar fora
     useEffect(() => {
         function handleClickOutside(e) {
             if (
@@ -26,23 +27,31 @@ export default function Submenu() {
             ) {
                 setSearchOpen(false);
             }
+
+            if (
+                storiesOpen &&
+                storiesRef.current &&
+                !storiesRef.current.contains(e.target)
+            ) {
+                setStoriesOpen(false);
+            }
         }
 
-    document.addEventListener("mousedown", handleClickOutside);
-        return () =>
-            document.removeEventListener("mousedown", handleClickOutside);
-    }, [searchOpen]);
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [searchOpen, storiesOpen]);
 
-    // Fechar com ESC
+    // Fechar busca e dropdown com ESC
     useEffect(() => {
         function handleEsc(e) {
             if (e.key === "Escape") {
                 setSearchOpen(false);
+                setStoriesOpen(false);
             }
         }
 
         document.addEventListener("keydown", handleEsc);
-            return () => document.removeEventListener("keydown", handleEsc);
+        return () => document.removeEventListener("keydown", handleEsc);
     }, []);
 
     return (
@@ -52,19 +61,20 @@ export default function Submenu() {
                 <a href="/#" className="submenu-link">Início</a>
 
                 <div
+                    ref={storiesRef}
                     className={`submenu-dropdown ${storiesOpen ? "open" : ""}`}
-                    onMouseEnter={() => setStoriesOpen(true)}
-                    onMouseLeave={() => setStoriesOpen(false)}
                 >
                     <a
                         href="/historias"
                         className="submenu-link"
                         onClick={(e) => {
                             e.preventDefault();
-                            setStoriesOpen((prev) => !prev)
-                        } }
+                            setStoriesOpen((prev) => !prev); // alterna aberto/fechado
+                        }}
                     >
-                        <span className="flex items-end justify-center">Histórias <ChevronDown size={20}/></span>
+                        <span className="flex items-end justify-center">
+                            Histórias <ChevronDown size={20} />
+                        </span>
                     </a>
 
                     <div className="submenu-dropdown-content">
@@ -103,4 +113,3 @@ export default function Submenu() {
         </nav>
     );
 }
-
