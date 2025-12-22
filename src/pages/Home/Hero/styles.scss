@@ -1,0 +1,10 @@
+@use "../../../Styles/variables.scss" as *;
+
+#hero {
+    background-color: $backgroundLt;
+    color: $mainTextLt;
+
+    h2 {
+        font-family: 'JetBrains Mono', monospace;
+    }
+}

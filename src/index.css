@@ -1,1 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
 @import "tailwindcss";
+
+
+:root {
+    --font-serif: 'Literata', serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+html, body {
+    font-family: var(--font-serif);
+}
