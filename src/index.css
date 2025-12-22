@@ -1,11 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&family=Vollkorn+SC:wght@400;600;700;900&display=swap');
 
 @import "tailwindcss";
 
 
 :root {
     --font-serif: 'Literata', serif;
-    --font-mono: 'JetBrains Mono', monospace;
+    --font-volk: 'Vollkorn SC', serif;
+    --color-highlight: #EB5E28;
+    --color-font: #252422;
+    --color-background: #FFFCF2;
+    --color-hover: #403D39;
+
+    [data-theme="dark"] {
+        --color-font: #FFFCF2;
+        --color-background: #252422;
+        --color-hover: #CCC5b9;
+    }
+
 }
 
 html, body {

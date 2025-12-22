@@ -2,9 +2,14 @@
 
 #hero {
     background-color: $backgroundLt;
-    color: $mainTextLt;
+    color: $colorFontLt;
+
+    h1 {
+        font-family: 'Vollkorn SC', serif;
+        text-transform: uppercase;
+    }
 
     h2 {
-        font-family: 'JetBrains Mono', monospace;
+        color: $colorHoverDt;
     }
 }

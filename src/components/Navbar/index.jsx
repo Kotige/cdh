@@ -1,116 +1,96 @@
-import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+
+import { useState } from "react";
+import { FaGithub, FaInstagram, FaTiktok, FaTwitter} from "react-icons/fa";
+import { HiSun, HiMoon, HiMenu, HiX } from "react-icons/hi";
 import "./styles.scss"
 
 export default function Navbar() {
+    const [dark, setDark] = useState(false);
     const [open, setOpen] = useState(false);
-    const [theme, setTheme] = useState("light");
-
-  // Tema: sistema + preferência
-    useEffect(() => {
-        const savedTheme = localStorage.getItem("theme");
-        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-        if (savedTheme) {
-            setTheme(savedTheme);
-            document.documentElement.classList.toggle("dark", savedTheme === "dark");
-        } else if (systemDark) {
-            setTheme("dark");
-            document.documentElement.classList.add("dark");
-        }
-    }, []);
-
-    const toggleTheme = () => {
-        const next = theme === "light" ? "dark" : "light";
-        setTheme(next);
-        localStorage.setItem("theme", next);
-        document.documentElement.classList.toggle("dark", next === "dark");
-    };
 
     return (
-        <header className="sticky top-0 z-40 border-b dark:border-slate-700 dark:bg-slate-900">
-            <nav className="relative mx-auto max-w-6xl px-4 py-4" id="navbar">
-                <div className="flex items-center justify-between">
-                {/* Logo */}
-                    <a
-                        href="/"
-                        className="logo text-sm text-slate-800 dark:text-slate-100"
-                    >
-                        <span className="logo-text">&lt;</span>
-                        <span className="md:hidden">cdh</span>
-                        <span className="hidden md:inline">CompiladorDeHistórias</span>
-                        <span className="logo-text"> /&gt;</span>
-                    </a>
+        <nav className="relative w-full px-4 py-3 border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900" id="navbar">
+            <div className="max-w-7xl mx-auto flex items-center justify-between">
 
-                {/* Desktop menu */}
-                    <div className="hidden items-center gap-6 md:flex">
-                        <a className="text-sm hover:text-amber-700 dark:hover:text-amber-400" href="#stories">
-                            Histórias
-                        </a>
-                        <a className="text-sm hover:text-amber-700 dark:hover:text-amber-400" href="#about">
-                            Changelog
-                        </a>
-
-                        <button
-                            onClick={toggleTheme}
-                            className="rounded-lg p-2 dark:border-slate-700"
-                            aria-label="Alternar tema"
-                        >
-                            {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
-                        </button>
-                    </div>
-
-                {/* Mobile toggle */}
+            {/* LEFT */}
+                <div className="flex items-center">
+                {/* Hamburger – mobile */}
                     <button
                         onClick={() => setOpen(!open)}
-                        className="rounded-lg p-2 md:hidden dark:border-slate-700"
-                        aria-label="Abrir menu"
+                        className="md:hidden"
                     >
-                        {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                        {open ? <HiX size={22} /> : <HiMenu size={22} />}
                     </button>
-                </div>
 
-            {/* Mobile dropdown menu */}
-                <div
-                    className={`
-                        md:hidden
-                        absolute left-0 right-0 top-full
-                        overflow-hidden
-                        border-b dark:border-slate-700/60
-                        dark:bg-slate-900/70
-                        backdrop-blur-md
-                        shadow-lg
-                        transition-all duration-300 ease-out
-                        ${open ? "max-h-60 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-2"}
-                    `}
-                >
-                    <div className="flex flex-col gap-4 px-4 py-6">
-                        <a
-                            href="#stories"
-                            onClick={() => setOpen(false)}
-                            className="text-base text-slate-800 dark:text-slate-100"
-                        >
-                            Histórias
-                        </a>
-
-                        <a
-                            href="#about"
-                            onClick={() => setOpen(false)}
-                            className="text-base text-slate-800 dark:text-slate-100"
-                        >
-                            Changelog
-                        </a>
-
-                        <button
-                            onClick={toggleTheme}
-                            className="mt-2 flex items-center gap-2"
-                        >
-                            {theme === "light" ? <Moon /> : <Sun />}
-                            Alternar tema
-                        </button>
+                {/* Social icons – desktop */}
+                    <div className="hidden md:flex items-center gap-5 ml-2">
+                        <SocialIcon><FaGithub className="social-icons"/></SocialIcon>
+                        <SocialIcon><FaInstagram className="social-icons"/></SocialIcon>
+                        <SocialIcon><FaTiktok className="social-icons"/></SocialIcon>
+                        <SocialIcon><FaTwitter className="social-icons"/></SocialIcon>
                     </div>
                 </div>
-            </nav>
-        </header>
+
+                {/* RIGHT – always visible */}
+                <div className="flex items-center gap-4">
+                    <button className="text-sm">
+                        <p className="btn-login">Log in</p>
+                    </button>
+
+                    <button className="btn-signup px-4 py-2 rounded-full text-sm" >
+                        Sign up
+                    </button>
+
+                    <button
+                        onClick={() => setDark(!dark)}
+                        className="p-2 rounded-full  dark:border-neutral-700"
+                    >
+                        {dark ? <HiSun size={18} /> : <HiMoon size={18} />}
+                    </button>
+                </div>
+            </div>
+
+            {/* MOBILE SOCIAL MENU */}
+            <div
+                className={`
+                    md:hidden
+                    absolute left-4 top-full mt-3
+                    overflow-hidden
+                    transition-all duration-300 ease-out
+                    ${open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
+                `}
+            >
+                <div
+                    className="
+                        flex flex-col gap-4
+                        px-1 py-4
+                        backdrop-blur-lg
+                        bg-transparent
+                        shadow-lg
+                        "
+                        style={{ width: "4.5rem" }} // ~4x icon width
+                >
+                    <SocialIcon><FaGithub className="social-icons"/></SocialIcon>
+                    <SocialIcon><FaInstagram className="social-icons"/></SocialIcon>
+                    <SocialIcon><FaTiktok className="social-icons"/></SocialIcon>
+                    <SocialIcon><FaTwitter className="social-icons"/></SocialIcon>
+                </div>
+            </div>
+        </nav>
+    );
+}
+
+function SocialIcon({ children }) {
+    return (
+        <a
+            href="#"
+            className="
+                text-xl
+                hover:opacity-50
+                transition
+            "
+        >
+            {children}
+        </a>
     );
 }
