@@ -3,7 +3,7 @@ import "./styles.scss"
 export default function FeaturedPost({ title, date, author, excerpt, link }) {
     return (
         <section id="featured-post"
-            className="relative w-full h-[50vh] bg-gray-100 p-4 md:p-8 flex flex-col justify-between"
+            className="relative w-full h-[50vh] p-4 md:p-8 flex flex-col justify-between"
         >
             {/* Cabeçalho */}
             <div className="text-center">
@@ -27,7 +27,7 @@ export default function FeaturedPost({ title, date, author, excerpt, link }) {
             <div className="absolute bottom-4 left-4 z-10">
                 <a
                     href={link}
-                    className="px-4 py-2 bg-brown-800 text-black font-semibold rounded shadow-lg hover:bg-brown-900 transition-colors"
+                    className="px-4 py-2 rounded shadow-lg"
                 >
                     Continue lendo
                 </a>

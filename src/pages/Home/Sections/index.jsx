@@ -1,5 +1,6 @@
 import "./styles.scss";
 import FeaturedPost from "./FeaturedPost";
+import RecentPosts from "./RecentPosts";
 
 export default function Sections() {
     return (
@@ -30,9 +31,33 @@ export default function Sections() {
             </div>
 
             {/* Coluna direita */}
-            <div className="column right-column">
-                <div className="top-right">Parte Superior da Coluna Direita</div>
-                <div className="bottom-right">Parte Inferior da Coluna Direita</div>
+            <div className="column right-column h-[50vh]">
+                <div className="top-right h-[60%]">
+                    <RecentPosts 
+
+                        posts={
+                            [
+                                {
+                                    title: "O último samurai",
+                                    subtitle: "Publicado em 12 de Dezembro.",
+                                    excerpt: "A história do último samurai vivo que desviveu há pouco mais de dois anos."
+                                },
+                                {
+                                    title: "A quarta feira",
+                                    subtitle: "Publicado em 17 de Dezembro.",
+                                    excerpt: "Nada parecia normal naquela última quarta feira. Tudo estava fora do lugar."
+                                },
+                                {
+                                    title: "A quarta feira",
+                                    subtitle: "Publicado em 17 de Dezembro.",
+                                    excerpt: "Nada parecia normal naquela última quarta feira. Tudo estava fora do lugar."
+                                }
+                            ]
+                        }
+
+                    />
+                </div>
+                <div className="bottom-right h-[40%]">Parte Inferior da Coluna Direita</div>
             </div>
         </div>
     );
