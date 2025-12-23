@@ -1,6 +1,8 @@
 import "./styles.scss";
 import FeaturedPost from "./FeaturedPost";
 import RecentPosts from "./RecentPosts";
+import ContentRotator from "./ContentRotator";
+import FunctionPrompt from "./ContentRotator/FunctionPrompt";
 
 export default function Sections() {
     return (
@@ -31,8 +33,8 @@ export default function Sections() {
             </div>
 
             {/* Coluna direita */}
-            <div className="column right-column h-[50vh]">
-                <div className="top-right h-[60%]">
+            <div className="column right-column h-[50vh] flex flex-col min-h-0">
+                <div className="top-right flex-[2] min-h-0">
                     <RecentPosts 
 
                         posts={
@@ -57,7 +59,17 @@ export default function Sections() {
 
                     />
                 </div>
-                <div className="bottom-right h-[40%]">Parte Inferior da Coluna Direita</div>
+                <div className="bottom-right flex-1 min-h-0">
+                    <ContentRotator 
+                        title="Prompt do Dia"
+                        items={[
+                            <FunctionPrompt 
+                                input={"Uma carta encontrada dentro de um livro proibido."}
+                                constraints={["silêncio", "tempo", "memória"]}
+                            />
+                        ]}
+                    />
+                </div>
             </div>
         </div>
     );

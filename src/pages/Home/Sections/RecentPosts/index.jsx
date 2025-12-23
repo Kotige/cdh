@@ -2,7 +2,7 @@ import "./styles.scss";
 
 export default function RecentPosts({ posts = [] }) {
     return (
-        <section id="recent-posts" className="h-full max-h-full px-4  flex flex-col overflow-hidden">
+        <section id="recent-posts" className="h-full max-h-full  flex flex-col overflow-hidden">
             
             {/* Título do componente */}
             <h3 className="text-center text-sm text-xl text-neutral-800 mb-3 shrink-0">
