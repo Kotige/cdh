@@ -1,0 +1,71 @@
+@use "../../../Styles/variables.scss" as *;
+
+.home-sections {
+    display: flex;
+    flex-direction: column; /* colunas empilhadas */
+    gap: 15px;
+    padding: 20px;
+    background-color: $backgroundLt;
+
+    .column {
+        width: calc(100% - 40px); /* largura total com margem */
+        margin: 0 20px;
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .right-column {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .top-right,
+        .bottom-right {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .top-right {
+            background-color: #e0e0e0;
+        }
+
+        .bottom-right {
+            background-color: #d0d0d0;
+        }
+    }
+}
+
+/* Desktop (largura >= 768px) */
+@media (min-width: 768px) {
+    .home-sections {
+        flex-direction: row; /* colunas lado a lado */
+        gap: 20px;
+
+        .left-column {
+            flex: 2; /* 2/3 da largura */
+            width: auto;
+            margin: 0;
+        }
+
+        .right-column {
+            flex: 1; /* 1/3 da largura */
+            width: auto;
+
+            .top-right {
+                flex: 2; /* 2/3 da coluna direita */
+            }
+
+            .bottom-right {
+                flex: 1; /* 1/3 da coluna direita */
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .home-sections {
+        padding: 20px 120px;
+    }
+}
