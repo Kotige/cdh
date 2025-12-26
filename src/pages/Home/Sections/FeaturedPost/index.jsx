@@ -3,7 +3,7 @@ import "./styles.scss"
 export default function FeaturedPost({ title, date, author, excerpt, link }) {
     return (
         <section id="featured-post"
-            className="relative w-full h-[50vh] p-4 md:p-8 flex flex-col justify-between"
+            className="relative w-full h-[90vh] p-4 md:p-8 flex flex-col justify-between"
         >
             {/* Cabeçalho */}
             <div className="text-center">

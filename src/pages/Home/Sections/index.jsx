@@ -33,7 +33,7 @@ export default function Sections() {
             </div>
 
             {/* Coluna direita */}
-            <div className="column right-column h-[50vh] flex flex-col min-h-0">
+            <div className="column right-column h-[90vh] flex flex-col min-h-0">
                 <div className="top-right flex-[2] min-h-0">
                     <RecentPosts 
 
