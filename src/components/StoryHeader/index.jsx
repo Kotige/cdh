@@ -49,6 +49,7 @@ export default function StoryHeader(
 
                 {/* Meta tags */}
                 <p className="
+                    font-sans
                     mt-6
                     text-sm
                     text-neutral-500

@@ -6,6 +6,8 @@ export default function StoryContent({children}){
             prose-lg
             dark:prose-invert
             max-w-none
+            font-serif
+            leading-relaxed
 
             prose-p:leading-relaxed
             prose-p:text-neutral-800

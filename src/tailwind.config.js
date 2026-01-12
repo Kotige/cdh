@@ -12,6 +12,10 @@ export default {
             spacing: {
                 container: "1.5rem",
             },
+            fontFamily: {
+                serif: ["Lora", "serif"],
+                sans: ["Inter","sans-serif"],
+            }
         },
     },
     plugins: [

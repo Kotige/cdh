@@ -10,8 +10,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/teste" element={<Teste />} />
-        <Route path="/storypage" element={<StoryPage />} />
+        <Route path="/contos/:slug" element={<StoryPage />}/>
       </Routes>
     </BrowserRouter>
   )

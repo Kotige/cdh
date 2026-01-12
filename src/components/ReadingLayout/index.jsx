@@ -1,6 +1,6 @@
 import react from "react";
 
-export default function ReadingLayout({children, className=""}) {
+export default function ReadingLayout({children, className="", immersive=false}) {
     return (
         <main className={`
             min-h-screeen
@@ -8,6 +8,8 @@ export default function ReadingLayout({children, className=""}) {
             text-neutral-900
             dark:bg-neutral-900
             dark:text-neutral-100
+            mx-auto
+            ${immersive ? "max-w-4xl md:max-w-5xl" : "max-w-3xl"}
         `}>
             <div className={`
                 mx-auto
