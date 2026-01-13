@@ -3,7 +3,7 @@ import './App.css';
 import Home from "./pages/Home";
 import AboutMe from "./pages/AboutMe";
 import StoryPage from "./pages/StoryPage";
-import About from "./pages/AboutMe";
+import Changelog from "./pages/ChangelogPage";
 
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/contos/:slug" element={<StoryPage />}/>
         <Route path="/aboutme" element={<AboutMe />} />
+        <Route path="/changelog" element={<Changelog />} />
       </Routes>
     </BrowserRouter>
   )
