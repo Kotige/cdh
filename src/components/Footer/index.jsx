@@ -42,7 +42,7 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a href="/sobre" className="hover:text-neutral-500 transition">
+                                <a href="/aboutme" className="hover:text-neutral-500 transition">
                                     Sobre
                                 </a>
                             </li>

@@ -85,7 +85,7 @@ export default function Submenu() {
                     </div>
                 </div>
 
-                <a href="/sobre" className="submenu-link">Sobre</a>
+                <a href="/aboutme" className="submenu-link">Sobre</a>
                 <a href="/changelog" className="submenu-link">Changelog</a>
             </div>
 
