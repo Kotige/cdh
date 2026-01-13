@@ -6,10 +6,14 @@ export default function Categories() {
     const categories = [
         ...new Map(
             stories.map((story) => [
-                story.series.slug,
-                story.series.title,
+                story.slug, 
+                {
+                    title: story.title,
+                    slug: story.slug,
+                    genre: story.genre,
+                },
             ])
-        ),
+        ).values(),
     ];
 
     return (
@@ -19,10 +23,10 @@ export default function Categories() {
             </h3>
 
             <ul className="space-y-2">
-                {categories.map(([slug, title]) => (
+                {categories.map(({slug, title, genre}) => (
                     <li key={slug}>
                         <Link
-                            to={`/categoria/${slug}`}
+                            to={`/${genre}/${slug}`}
                             className="text-sm hover:underline"
                         >
                             {title}

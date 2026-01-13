@@ -22,7 +22,7 @@ export default function FeaturedPost({ story }) {
             </div>
 
             <Link
-                to={`/conto/${story.slug}`}
+                to={`/${story.genre}/${story.slug}`}
                 className="inline-block mt-8 text-sm border-b border-neutral-800 hover:border-neutral-400 transition"
             >
                 Continuar leitura →

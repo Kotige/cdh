@@ -17,12 +17,12 @@ export default function Home() {
     const recent = sortedStories.slice(1,4);
 
     return (
-        <main className=" mx-auto ">
+        <main className="mx-auto">
             <Navbar />
             <Hero />
-            <section className="grid grid-cols-1 lg:grid-cols-3 gap-12 px-4 lg:px-20 py-12">
+            <section className="grid grid-cols-1 lg:grid-cols-4 gap-12 px-4 lg:px-28 py-12">
                 {/* Coluna principal  */}
-                <article className="lg:col-span-2">
+                <article className="lg:col-span-3">
                     <FeaturedPost story={featured} />
                 </article>
                 {/* Sidebar  */}

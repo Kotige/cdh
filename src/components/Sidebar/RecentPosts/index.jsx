@@ -11,7 +11,7 @@ export default function RecentPosts({ posts }) {
                 {posts.map((post) => (
                     <li key={post.slug}>
                         <Link
-                            to={`/conto/${post.slug}`}
+                            to={`/${post.genre}/${post.slug}`}
                             className="block hover:underline"
                         >
                             <span className="block font-serif">
