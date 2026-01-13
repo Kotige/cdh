@@ -58,7 +58,7 @@ export default function Submenu() {
         <nav className="submenu -mb-10">
             {/* Linha principal */}
             <div className="submenu-main">
-                <a href="/#" className="submenu-link">Início</a>
+                <a href="/" className="submenu-link">Início</a>
 
                 <div
                     ref={storiesRef}
