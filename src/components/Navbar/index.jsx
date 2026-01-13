@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaGithub, FaInstagram, FaTiktok, FaTwitter} from "react-icons/fa";
 import { HiSun, HiMoon, HiMenu, HiX } from "react-icons/hi";
 import "./styles.scss"
@@ -24,10 +25,21 @@ export default function Navbar() {
 
                 {/* Social icons – desktop */}
                     <div className="hidden md:flex items-center gap-5 ml-2">
-                        <SocialIcon><FaGithub className="social-icons"/></SocialIcon>
-                        <SocialIcon><FaInstagram className="social-icons"/></SocialIcon>
-                        <SocialIcon><FaTiktok className="social-icons"/></SocialIcon>
-                        <SocialIcon><FaTwitter className="social-icons"/></SocialIcon>
+                        <SocialIcon>
+                            <a href="https://github.com/Kotige" target="_blank">
+                                <FaGithub className="social-icons"/>
+                            </a>
+                        </SocialIcon>
+                        <SocialIcon>
+                            <a href="https://www.instagram.com/modvestudio/" target="_blank">
+                                <FaInstagram className="social-icons"/>
+                            </a>
+                        </SocialIcon>
+                        <SocialIcon>
+                            <a href="https://www.tiktok.com/@modvestudio?_r=1&_t=ZS-932r41f2wx3" target="_blank">
+                                <FaTiktok className="social-icons"/>
+                            </a>
+                        </SocialIcon>
                     </div>
                 </div>
 

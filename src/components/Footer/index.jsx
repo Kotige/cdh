@@ -37,7 +37,7 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a href="/posts" className="hover:text-neutral-500 transition">
+                                <a href="/all" className="hover:text-neutral-500 transition">
                                     Histórias
                                 </a>
                             </li>
@@ -47,7 +47,7 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
-                                <a href="/contato" className="hover:text-neutral-500 transition">
+                                <a href="/changelog" className="hover:text-neutral-500 transition">
                                     Changelog
                                 </a>
                             </li>
@@ -62,22 +62,22 @@ export default function Footer() {
 
                         <ul className="space-y-3 text-sm">
                             <li>
-                                <a href="/categoria/contos" className="hover:text-neutral-500 transition">
+                                <a href="/fantasia" className="hover:text-neutral-500 transition">
                                     Fantasia
                                 </a>
                             </li>
                             <li>
-                                <a href="/categoria/crônicas" className="hover:text-neutral-500 transition">
+                                <a href="/ficcao-cientifica" className="hover:text-neutral-500 transition">
                                     Sci-fi
                                 </a>
                             </li>
                             <li>
-                                <a href="/categoria/ensaios" className="hover:text-neutral-500 transition">
+                                <a href="/terror" className="hover:text-neutral-500 transition">
                                     Terror
                                 </a>
                             </li>
                             <li>
-                                <a href="/categoria/arquivo" className="hover:text-neutral-500 transition">
+                                <a href="/all" className="hover:text-neutral-500 transition">
                                     Todos
                                 </a>
                             </li>
@@ -94,6 +94,7 @@ export default function Footer() {
 
         <a
             href="https://github.com/Kotige"
+            target="_blank"
             aria-label="GitHub"
             className="text-neutral-700 transition hover:text-neutral-500"
         >
@@ -102,6 +103,7 @@ export default function Footer() {
 
         <a
             href="https://instagram.com/modvestudio"
+            target="_blank"
             aria-label="Instagram"
             className="text-neutral-700 transition hover:text-neutral-500"
         >
@@ -109,7 +111,8 @@ export default function Footer() {
         </a>
 
         <a
-            href="#"
+            href="https://www.tiktok.com/@modvestudio?_r=1&_t=ZS-932r41f2wx3"
+            target="_blank"
             aria-label="TikTok"
             className="text-neutral-700 transition hover:text-neutral-500"
         >
@@ -123,7 +126,7 @@ export default function Footer() {
 
                 {/* Linha inferior */}
                 <div className="mt-16 border-t border-neutral-300 pt-6 text-xs text-neutral-500 flex flex-col gap-2 md:flex-row md:justify-between">
-                    <span>© 2025 modv estúdio. Todos os direitos reservados.</span>
+                    <span>© 2026 <a href="https://modvestudio.com.br/" target="_blank">modv estúdio</a>. Todos os direitos reservados.</span>
                     <span>Feito com palavras e silêncio.</span>
                 </div>
 

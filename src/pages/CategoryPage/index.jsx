@@ -57,7 +57,7 @@ export default function CategoryPage() {
                             <StoryPreview 
                                 slug={story.slug}
                                 title={story.title}
-                                excerpt={story.excerpt}
+                                excerpt={story.epigraph}
                                 readingTime={`${story.readingTime}`}
                                 author={story.author}
                             />
