@@ -78,9 +78,9 @@ export default function Submenu() {
                     </a>
 
                     <div className="submenu-dropdown-content">
-                        <a href="/historias/fantasia">Fantasia</a>
-                        <a href="/historias/ficcao-cientifica">Ficção científica</a>
-                        <a href="/historias/terror">Terror</a>
+                        <a href="/fantasia">Fantasia</a>
+                        <a href="/ficcao-cientifica">Ficção científica</a>
+                        <a href="/terror">Terror</a>
                         <a href="/historias">Todas</a>
                     </div>
                 </div>

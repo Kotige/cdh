@@ -1,6 +1,7 @@
 export const stories = [
     {
         slug: "a-biblioteca-que-sussurrava",
+        genre: "fantasia",
         series: {
             title: "O Menino que Comeu um Livro de Magia",
             slug: "o-menino-que-comeu-um-livro-de-magia",
