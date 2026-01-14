@@ -25,7 +25,7 @@ export default function StoryPage() {
     return (
         <>
         {/* Header de Leitura  */}
-        {!immersive && <ReadingHeader title="Contos"/>}
+        {!immersive && <ReadingHeader title={story.genre}/>}
 
         {/* Corpo de Leitura  */}
         <ReadingLayout>
