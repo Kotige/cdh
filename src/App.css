@@ -1,0 +1,27 @@
+/* Coloque aqui no final do seu global.css ou global.scss */
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: var(--bg-main);
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 6px;
+    border: 3px solid var(--bg-main);
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--bg-main);
+    }
+
+html {
+    scroll-behavior: smooth;
+}
