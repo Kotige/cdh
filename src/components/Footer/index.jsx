@@ -1,135 +1,141 @@
-import {
-    FaInstagram,
-    FaGithub,
-    FaTiktok
-} from "react-icons/fa";
-import "./styles.scss";
+import { FaInstagram, FaGithub, FaTiktok } from "react-icons/fa";
+
 
 
 export default function Footer() {
     return (
-        <footer id="footer" className="text-center mt-24 bg-neutral-200">
-            <div className="mx-auto max-w-7xl px-6 py-16">
-                
-                <div className="grid gap-12 lg:grid-cols-4">
-                    
-                    {/* Identidade */}
-                    <div className="space-y-4">
-                        <h3 className="text-3xl">
+        <footer className="
+            mt-24 bg-bg-main text-text-muted
+        ">
+            <div className="
+                mx-auto
+                max-w-6xl
+                px-6
+                py-16
+                space-y-12
+            ">
+                {/* Bloco Principal  */}
+                <div className="
+                    grid
+                    gap-12
+                    md:grid-cols-3
+                    text-center
+                ">
+                    {/* Identidade  */}
+                    <div className="space-y-3">
+                        <h3 className="
+                            text-xl
+                            font-serif
+                            text-text-main
+                        ">
                             Kernel
                         </h3>
-
-                        <p className="text-sm leading-relaxed text-neutral-500">
+                        <p className="
+                            text-sm
+                            leading-relaxed
+                        ">
                             //histórias compiladas
                         </p>
                     </div>
 
-                    {/* Navegação */}
+                    {/* Navegação  */}
                     <div>
-                        <h4 className="mb-4 text-sm uppercase tracking-wider text-neutral-700">
+                        <h4 className="
+                            mb-4 text-xs
+                            uppercase
+                            tracking-widest
+                        ">
                             Navegação
                         </h4>
 
-                        <ul className="space-y-3 text-sm">
+                        <ul className="space-y-2 text-sm">
                             <li>
-                                <a href="/" className="hover:text-neutral-500 transition">
+                                <a href="/"
+                                    className="hover:text-text-main transition"
+                                >
                                     Home
                                 </a>
                             </li>
                             <li>
-                                <a href="/all" className="hover:text-neutral-500 transition">
-                                    Histórias
+                                <a href="/all"
+                                    className="hover:text-text-main transition"
+                                >
+                                    Arquivos
                                 </a>
                             </li>
                             <li>
-                                <a href="/aboutme" className="hover:text-neutral-500 transition">
+                                <a href="/aboutme"
+                                    className="hover:text-text-main transition"
+                                >
                                     Sobre
                                 </a>
                             </li>
                             <li>
-                                <a href="/changelog" className="hover:text-neutral-500 transition">
+                                <a href="/changelog"
+                                    className="hover:text-text-main transition"
+                                >
                                     Changelog
                                 </a>
                             </li>
                         </ul>
                     </div>
 
-                    {/* Categorias */}
+                    {/* Conexões  */}
                     <div>
-                        <h4 className="mb-4 text-sm uppercase tracking-wider text-neutral-700">
-                            Categorias
+                        <h4 className="
+                            mb-4
+                            text-xs
+                            uppercase
+                            tracking-widest
+                        ">
+                            Conexões
                         </h4>
-
-                        <ul className="space-y-3 text-sm">
-                            <li>
-                                <a href="/fantasia" className="hover:text-neutral-500 transition">
-                                    Fantasia
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/ficcao-cientifica" className="hover:text-neutral-500 transition">
-                                    Sci-fi
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/terror" className="hover:text-neutral-500 transition">
-                                    Terror
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/all" className="hover:text-neutral-500 transition">
-                                    Todos
-                                </a>
-                            </li>
-                        </ul>
+                        <div className="flex justify-center gap-4">
+                            <a href="https://github.com/Kotige"
+                                target="_blank"
+                                aria-label="GitHub"
+                                className="hover:text-text-main transition"
+                            >
+                                <FaGithub size={16} />
+                            </a>
+                            <a href="https://instagram.com/modvestudio"
+                                target="_blank"
+                                aria-label="Instagram"
+                                className="hover:text-text-main transition"
+                            >
+                                <FaInstagram size={16} />
+                            </a>
+                            <a href="https://www.tiktok.com/@modvestudio"
+                                target="_blank"
+                                aria-label="TikTok"
+                                className="hover:text-text-main transition"
+                            >
+                                <FaTiktok size={16} />
+                            </a>
+                        </div>
                     </div>
-
-{/* Social */}
-<div>
-    <h4 className="mb-4 text-sm uppercase tracking-wider text-neutral-700">
-        Conexões
-    </h4>
-
-    <div className="flex items-center justify-center gap-4">
-
-        <a
-            href="https://github.com/Kotige"
-            target="_blank"
-            aria-label="GitHub"
-            className="text-neutral-700 transition hover:text-neutral-500"
-        >
-            <FaGithub size={18} />
-        </a>
-
-        <a
-            href="https://instagram.com/modvestudio"
-            target="_blank"
-            aria-label="Instagram"
-            className="text-neutral-700 transition hover:text-neutral-500"
-        >
-            <FaInstagram size={18} />
-        </a>
-
-        <a
-            href="https://www.tiktok.com/@modvestudio?_r=1&_t=ZS-932r41f2wx3"
-            target="_blank"
-            aria-label="TikTok"
-            className="text-neutral-700 transition hover:text-neutral-500"
-        >
-            <FaTiktok size={18} />
-        </a>
-    </div>
-</div>
-
-
                 </div>
+            </div>
+            {/* Encerramento  */}
+            <div className="
+                p-8
+                border-t
+                border-border-subtle
+                flex
+                flex-col
+                gap-3
+                text-xs
+                text-center
+                md:flex-row
+                md:justify-between
+            ">
+                <span>
+                    © 2026 <a href="https://modvestudio.com.br/" target="_blank">modv estúdio</a>. Todos os direitos reservados.
+                </span>
 
-                {/* Linha inferior */}
-                <div className="mt-16 border-t border-neutral-300 pt-6 text-xs text-neutral-500 flex flex-col gap-2 md:flex-row md:justify-between">
-                    <span>© 2026 <a href="https://modvestudio.com.br/" target="_blank">modv estúdio</a>. Todos os direitos reservados.</span>
-                    <span>Feito com palavras e silêncio.</span>
-                </div>
-
+                <span className="italic">
+                    Algumas histórias continuam despois da última linha.
+                </span>
             </div>
         </footer>
     );
