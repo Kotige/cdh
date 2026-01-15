@@ -16,21 +16,31 @@ export default function Changelog() {
 
             <div className="bg-bg-main">
                 <ReadingLayout>
-                <ChangelogHeader />
-                {changelogData.map((group, index) => (
-                    <div key={index}>
-                        <ChangelogGroup 
-                            period={group.period} 
-                            entries={group.entries} 
-                        />
-                        
-                        {index < changelogData.lengh -1 && (
-                            <ChangelogDivider />
-                        )}
-                    </div>
-                ))}
+                    <div 
+                        className="
+                            bg-bg-surface
+                            rounded-lg
+                            px-6 py-10
+                            md:px-10
+                            max-w-3xl
+                            mx-auto
+                    ">
+                        <ChangelogHeader />
+                    {changelogData.map((group, index) => (
+                        <div key={index}>
+                            <ChangelogGroup 
+                                period={group.period} 
+                                entries={group.entries} 
+                            />
+                            
+                            {index < changelogData.lengh -1 && (
+                                <ChangelogDivider />
+                            )}
+                        </div>
+                    ))}
 
-                <ChangelogFooter />
+                    <ChangelogFooter />
+                    </div>
             </ReadingLayout>
             </div>
 
