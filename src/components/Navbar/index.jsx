@@ -1,106 +1,79 @@
-
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaGithub, FaInstagram, FaTiktok, FaTwitter} from "react-icons/fa";
-import { HiSun, HiMoon, HiMenu, HiX } from "react-icons/hi";
+import { FaGithub, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
+import { HiMenu, HiX } from "react-icons/hi";
+
 import "./styles.scss"
 
 export default function Navbar() {
-    const [dark, setDark] = useState(false);
     const [open, setOpen] = useState(false);
 
     return (
-        <nav className="relative w-full px-4 py-3 border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900" id="navbar">
+        <nav
+            id="navbar"
+            className="relative w-full px-4 py-3 border-b border-border-subtle bg-bg-main"
+        >
             <div className="max-w-7xl mx-auto flex items-center justify-between">
 
-            {/* LEFT */}
+                {/* LEFT */}
                 <div className="flex items-center">
-                {/* Hamburger – mobile */}
+                    <span className="text-xl font-serif text-text-main">Kernel</span>
+                </div>
+
+                {/* RIGHT */}
+                    <div className="flex items-center">
+                    {/* Hamburger – mobile */}
                     <button
                         onClick={() => setOpen(!open)}
-                        className="md:hidden"
+                        className="text-text-main mobile p-2 rounded-md hover:bg-bg-surface transition"
                     >
                         {open ? <HiX size={22} /> : <HiMenu size={22} />}
                     </button>
 
-                {/* Social icons – desktop */}
-                    <div className="hidden md:flex items-center gap-5 ml-2">
-                        <SocialIcon>
-                            <a href="https://github.com/Kotige" target="_blank">
-                                <FaGithub className="social-icons"/>
-                            </a>
+                    {/* Social icons – desktop */}
+                    <div className="flex items-center gap-5 ml-4 desktop">
+                        <SocialIcon href="https://github.com/Kotige">
+                            <FaGithub />
                         </SocialIcon>
-                        <SocialIcon>
-                            <a href="https://www.instagram.com/modvestudio/" target="_blank">
-                                <FaInstagram className="social-icons"/>
-                            </a>
+                        <SocialIcon href="https://www.instagram.com/modvestudio/">
+                            <FaInstagram />
                         </SocialIcon>
-                        <SocialIcon>
-                            <a href="https://www.tiktok.com/@modvestudio?_r=1&_t=ZS-932r41f2wx3" target="_blank">
-                                <FaTiktok className="social-icons"/>
-                            </a>
+                        <SocialIcon href="https://www.tiktok.com/@modvestudio">
+                            <FaTiktok />
                         </SocialIcon>
                     </div>
-                </div>
-
-                {/* RIGHT – always visible */}
-                <div className="flex items-center gap-4">
-                    <button className="text-sm">
-                        <p className="btn-login">Log in</p>
-                    </button>
-
-                    <button className="btn-signup px-4 py-2 rounded-full text-sm" >
-                        Sign up
-                    </button>
-
-                    <button
-                        onClick={() => setDark(!dark)}
-                        className="p-2 rounded-full  dark:border-neutral-700"
-                    >
-                        {dark ? <HiSun size={18} /> : <HiMoon size={18} />}
-                    </button>
                 </div>
             </div>
 
             {/* MOBILE SOCIAL MENU */}
             <div
                 className={`
-                    md:hidden
-                    absolute left-4 top-full mt-3
-                    overflow-hidden
+                    mobile absolute right-4 top-full mt-3
                     transition-all duration-300 ease-out
                     ${open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 pointer-events-none"}
-                `}
+                    `}
             >
-                <div
-                    className="
-                        flex flex-col gap-4
-                        px-1 py-4
-                        backdrop-blur-lg
-                        bg-transparent
-                        shadow-lg
-                        "
-                        style={{ width: "4.5rem" }} // ~4x icon width
-                >
-                    <SocialIcon><FaGithub className="social-icons"/></SocialIcon>
-                    <SocialIcon><FaInstagram className="social-icons"/></SocialIcon>
-                    <SocialIcon><FaTiktok className="social-icons"/></SocialIcon>
-                    <SocialIcon><FaTwitter className="social-icons"/></SocialIcon>
+                <div className="flex flex-col gap-4 p-4 rounded-lg bg-bg-surface shadow-lg">
+                    <SocialIcon href="https://github.com/Kotige">
+                        <FaGithub />
+                    </SocialIcon>
+                    <SocialIcon href="https://www.instagram.com/modvestudio/">
+                        <FaInstagram />
+                    </SocialIcon>
+                    <SocialIcon href="https://www.tiktok.com/@modvestudio">
+                        <FaTiktok />
+                    </SocialIcon>
                 </div>
             </div>
         </nav>
     );
 }
 
-function SocialIcon({ children }) {
+function SocialIcon({ children, href = "#" }) {
     return (
         <a
-            href="#"
-            className="
-                text-xl
-                hover:opacity-50
-                transition
-            "
+            href={href}
+            target="_blank"
+            className="text-xl text-text-muted hover:text-accent transition"
         >
             {children}
         </a>
