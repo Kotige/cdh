@@ -1,112 +1,32 @@
-@use "../../Styles/variables.scss" as *;
-
+/* Container do submenu */
 .submenu {
-    color: $colorFontLt;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; // permite quebrar linha
     align-items: center;
-    gap: 12px;
-}
-
-/* Linha principal */
-.submenu-main {
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 32px;
-}
-
-/* Links */
-.submenu-link {
-    text-decoration: none;
-    font-weight: 500;
-    position: relative;
-    &:hover {
-        color: $colorHoverDt;
-    }
-}
-
-/* Dropdown */
-.submenu-dropdown {
-    position: relative;
-
-    &-content {
-        display: none;
-        position: absolute;
-        top: 120%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: $backgroundLt;
-        border-radius: 8px;
-        padding: 8px 0;
-        min-width: 180px;
-        text-align: center;
-        z-index: 10;
-
-        a {
-            display: block;
-            padding: 8px 16px;
-            text-decoration: none;
-
-            &:hover {
-                background: $colorHoverDt;
-            }
-        }
-    }
-
-    &:hover .submenu-dropdown-content,
-    &.open .submenu-dropdown-content {
-        display: block;
-    }
+    gap: 2.5rem;
 }
 
 /* Busca */
 .submenu-search {
     display: flex;
     align-items: center;
-    gap: 8px;
-    position: relative;
-
-    .submenu-search-input {
-        width: 0;
-        opacity: 0;
-        padding: 6px 0;
-        border-radius: 999px;
-        border: 2px solid $colorFontLt;
-        transform: scaleX(0);
-        transform-origin: right center;
-        transition:
-            width 0.35s ease,
-            opacity 0.2s ease,
-            transform 0.35s ease,
-            padding 0.35s ease;
-        pointer-events: none;
-    }
-
-    &.open {
-        .submenu-search-input {
-            width: 180px;
-            opacity: 1;
-            padding: 6px 12px;
-            transform: scaleX(1);
-            pointer-events: auto;
-        }
-    }
 }
 
-.submenu-search-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-/* Desktop */
-@media (min-width: 768px) {
-    .submenu {
-        flex-direction: row;
+/* MOBILE */
+@media (max-width: 767px) {
+    .submenu-search {
+        width: 100%;           // ocupa a linha inteira
         justify-content: center;
-        gap: 24px;
+        margin-top: 0.75rem;   // espaço vertical
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+    .submenu-search {
+        width: auto;
+        margin-left: 1rem;
+        margin-top: 0;
     }
 }
