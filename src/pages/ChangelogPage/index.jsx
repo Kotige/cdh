@@ -1,4 +1,5 @@
-import ReadingHeader from '../../components/ReadingHeader';
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 import ReadingLayout from '../../components/ReadingLayout'
 import ChangelogHeader from '../../components/ChangelogHeader';
 import ChangelogGroup from '../../components/ChangelogGroup';
@@ -11,9 +12,10 @@ export default function Changelog() {
 
     return (
         <>
-            <ReadingHeader title="Changelog" />
+            <Navbar />
 
-            <ReadingLayout>
+            <div className="bg-bg-main">
+                <ReadingLayout>
                 <ChangelogHeader />
                 {changelogData.map((group, index) => (
                     <div key={index}>
@@ -22,7 +24,7 @@ export default function Changelog() {
                             entries={group.entries} 
                         />
                         
-                        {index < changelogData.lenght -1 && (
+                        {index < changelogData.lengh -1 && (
                             <ChangelogDivider />
                         )}
                     </div>
@@ -30,6 +32,9 @@ export default function Changelog() {
 
                 <ChangelogFooter />
             </ReadingLayout>
+            </div>
+
+            <Footer />
         </>
     );
 }

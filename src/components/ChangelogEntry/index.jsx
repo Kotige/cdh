@@ -7,23 +7,52 @@ export default function ChangelogEntry({
     date = formatDateTime(),
 }) {
     return (
-        <article className='mb-10'>
+        <article 
+            className="
+                pb-10 
+                border-b 
+                border-border-subtle
+                last:border-b-0
+        ">
             <time 
-                className='block mb-2 text-sm text-neutral-500'
+                className="
+                    block
+                    mb-2
+                    text-sm
+                    text-text-muted
+                "
             >
                 {date}            
             </time>
 
-            <h2 className='mb-3 text-xl font-medium leading-snug'>
+            <h3 className="
+                mb-3
+                text-xl
+                font-medium
+                leading-snug
+                text-text-main
+            ">
                 {title}
-            </h2>
+            </h3>
 
-            <p className='mb-4 text-neutral-700 dark:text-neutral-300'>
+            <p 
+                className="
+                    mb-4
+                    text-text-main
+                    opacity-90
+            ">
                 {description}
             </p>
 
             {items.length > 0 && (
-                <ul className='list-disc pl-5 space-y-1 text-sm text-neutral-600 dark:text-neutral-400'>
+                <ul 
+                className="
+                    list-disc
+                    pl-5
+                    space-y-1
+                    text-sm
+                    text-text-muted
+                ">
                     {items.map((item, index) => (
                         <li key={index}>{item}</li>
                     ))}
