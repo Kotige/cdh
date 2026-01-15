@@ -17,7 +17,7 @@ export default function Home() {
     const recent = sortedStories.slice(1,4);
 
     return (
-        <main className="mx-auto">
+        <main className="mx-auto bg-bg-main">
             <Navbar />
             <Hero />
             <section className="grid grid-cols-1 lg:grid-cols-4 gap-12 px-4 lg:px-28 py-12">

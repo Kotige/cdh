@@ -6,9 +6,6 @@ export default {
         ],
     theme: {
         extend: {
-            colors: {
-                highlight: "#A67152",
-            },
             spacing: {
                 container: "1.5rem",
             },

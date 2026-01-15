@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Site */
+    --bg-main: #1c1c1c;
+    --bg-surface: #2a2a2a;
+    --bg-elevated: #333333;
+
+    --text-main: #ededed;
+    --text-muted: #9ca3af;
+
+    --accent: #3f5d7d;
+    --accent-hover: #567fa6;
+
+    --border-subtle: #3a3a3a;
+
+    /* Reading */
+    --reading-bg: #fffcf2;
+    --reading-text: #242424;
+    --reading-muted: #6b6b6b;
+}
+
+
+/* 🔥 Tema Tailwind v4 */
+@theme {
+    --color-bg-main: var(--bg-main);
+    --color-bg-surface: var(--bg-surface);
+    --color-bg-elevated: var(--bg-elevated);
+
+    --color-text-main: var(--text-main);
+    --color-text-muted: var(--text-muted);
+    --color-text-reading: var(--reading-text);
+
+    --color-accent: var(--accent);
+    --color-accent-hover: var(--accent-hover);
+
+    --color-border-subtle: var(--border-subtle);
+
+    --color-reading-bg: var(--reading-bg);
+}

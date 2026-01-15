@@ -9,22 +9,6 @@
 @plugin "@tailwindcss/typography";
 
 
-:root {
-    --font-serif: 'Literata', serif;
-    --font-volk: 'Vollkorn SC', serif;
-    --color-highlight: #EB5E28;
-    --color-font: #252422;
-    --color-background: #FFFCF2;
-    --color-hover: #403D39;
-
-    [data-theme="dark"] {
-        --color-font: #FFFCF2;
-        --color-background: #252422;
-        --color-hover: #CCC5b9;
-    }
-
-}
-
 html, body {
     font-family: var(--font-serif);
 }

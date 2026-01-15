@@ -4,7 +4,7 @@ export default function FeaturedPost({ story }) {
     if (!story) return null;
 
     return (
-        <div>
+        <div className="bg-bg-main">
             <span className="block text-xs tracking-widest uppercase text-neutral-500 mb-4">
                 Texto em Destaque
             </span>
