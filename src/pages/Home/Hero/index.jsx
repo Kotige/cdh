@@ -10,13 +10,13 @@ export default function Hero() {
             <div className="text-center px-4">
                 
                 <h1
-                    className="text-5xl md:text-7xl font-serif text-text-main tracking-tight"
+                    className="text-5xl md:text-7xl font-serif text-text-main tracking-tight mb-2"
                 >
                     Kernel
                 </h1>
 
                 <p
-                    className=" mb-12 text-sm md:text-base text-text-muted tracking-tight"
+                    className=" mb-12 text-sm md:text-base text-text-muted tracking-tight hidden"
                 >
                     //histórias compiladas
                 </p>

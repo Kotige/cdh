@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaGithub, FaInstagram, FaTiktok, FaTwitter } from "react-icons/fa";
 import { HiMenu, HiX } from "react-icons/hi";
+import kernel from "/kernel-nobg.png"
 
 import "./styles.scss"
 
@@ -15,9 +16,20 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto flex items-center justify-between">
 
                 {/* LEFT */}
-                <div className="flex items-center">
-                    <span className="text-xl font-serif text-text-main">Kernel</span>
-                </div>
+                <a href="/">
+                    <div className="flex items-center relative group">
+                        <img 
+                            src={kernel} 
+                            alt="kernel logo" 
+                            className="
+                                w-[1.2rem] z-10"
+                        />
+                        <span className="absolute left-18 text-xl font-serif text-text-main z-0 translate-x-[-100%] opacity-0 transition-all duration-400 group-hover:left-20 group-hover:opacity-100"
+                        >
+                            Kernel
+                        </span>
+                    </div>
+                </a>
 
                 {/* RIGHT */}
                     <div className="flex items-center">
