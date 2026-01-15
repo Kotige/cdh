@@ -1,1 +1,19 @@
-@use "../../Styles/variables.scss" as *;
+.home-content {
+    max-width: 1280px;
+    margin: 0 auto;
+
+    padding: 3rem 1.5rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .home-content {
+        grid-template-columns: 3fr 1fr;
+        padding: 3rem 4rem;
+        gap: 4rem;
+    }
+}
+

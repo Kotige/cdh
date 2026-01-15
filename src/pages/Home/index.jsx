@@ -14,22 +14,23 @@ export default function Home() {
     );
 
     const featured = sortedStories[0];
-    const recent = sortedStories.slice(1,4);
+    const recent = sortedStories.slice(1, 4);
 
     return (
-        <main className="mx-auto bg-bg-main">
+        <main className="home bg-bg-main text-text-main">
             <Navbar />
             <Hero />
-            <section className="grid grid-cols-1 lg:grid-cols-4 gap-12 px-4 lg:px-28 py-12">
-                {/* Coluna principal  */}
-                <article className="lg:col-span-3">
+
+            <section className="home-content">
+                <article className="home-main">
                     <FeaturedPost story={featured} />
                 </article>
-                {/* Sidebar  */}
-                <aside>
-                    <Sidebar recent={recent}/>
+
+                <aside className="home-sidebar">
+                    <Sidebar recent={recent} />
                 </aside>
             </section>
+
             <Footer />
         </main>
     );
