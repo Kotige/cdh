@@ -2,29 +2,49 @@ import { Link } from "react-router-dom";
 
 export default function RecentPosts({ posts }) {
     return (
-        <section>
-            <h3 className="text-sm font-semibold tracking-widest uppercase mb-6">
+        <section className="
+            bg-bg-surface
+            px-6 py-8
+        ">
+            <h3 className="
+                text-xs
+                font-semibold
+                tracking-widest
+                uppercase
+                text-text-muted
+                mb-6
+            ">
                 Publicações Recentes
             </h3>
 
-            <ul className="space-y-5">
+            <ul className="space-y-6">
                 {posts.map((post) => (
                     <li key={post.slug}>
                         <Link
                             to={`/${post.genre}/${post.slug}`}
-                            className="block hover:underline"
+                            className="
+                                block
+                                font-serif
+                                text-text-main
+                                leading-snug
+                                hover:underline
+                            "
                         >
-                            <span className="block font-serif">
-                                {post.title}
-                            </span>
+                            {post.title}
                         </Link>
 
-                        <span className="text-xs text-neutral-500">
+                        <span className="
+                            block
+                            mt-1
+                            text-xs
+                            text-text-muted
+                        ">
                             Publicado em {post.date}
                         </span>
                     </li>
                 ))}
             </ul>
+
         </section>
     );
 }

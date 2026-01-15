@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { stories } from "../../../data/stories";
-import { SlUserFollowing } from "react-icons/sl";
 
 export default function Categories() {
     const categories = [
@@ -17,17 +16,20 @@ export default function Categories() {
     ];
 
     return (
-        <section>
-            <h3 className="text-sm font-semibold tracking-widest uppercase mb-6">
+        <section className="
+            bg-bg-surface
+            px-6 py-8
+        ">
+            <h3 className="text-xs font-semibold tracking-widest uppercase text-text-muted mb-6">
                 Arquivos
             </h3>
 
-            <ul className="space-y-2">
+            <ul className="space-y-3">
                 {categories.map(({slug, title, genre}) => (
                     <li key={slug}>
                         <Link
                             to={`/${genre}/${slug}`}
-                            className="text-sm hover:underline"
+                            className="text-sm text-text-main leading-snug hover:underline"
                         >
                             {title}
                         </Link>

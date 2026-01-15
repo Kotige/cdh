@@ -4,29 +4,76 @@ export default function FeaturedPost({ story }) {
     if (!story) return null;
 
     return (
-        <div className="bg-bg-main">
-            <span className="block text-xs tracking-widest uppercase text-neutral-500 mb-4">
-                Texto em Destaque
-            </span>
+        <section
+            className="
+                bg-bg-surface
+                px-6 py-10
+                md:px:10 md:py-14
+                lg:px-14
+            ">
+                {/* Selo Editorial  */}
+                <span
+                    className="
+                        block
+                        mb-3
+                        text-xs
+                        tracking-widest
+                        uppercase
+                        text-text-muted
+                        ">
+                            História em Destaque
+                </span>
 
-            <h1 className="text-3xl md:text-4xl font-serif mb-3">
-                {story.title}
-            </h1>
+                {/* Título  */}
+                <h1
+                className="
+                    font-serif
+                    text-2xl md:text-3xl
+                    leading-tight
+                    text-text-main
+                    mb-4
+                    lg:max-w-3xl
+                ">
+                    {story.title}
+                </h1>
 
-            <p className="text-sm text-neutral max-w-none">
-                Postado em {story.date} por {story.author}.
-            </p>
+                {/* Metadados  */}
+                <p className="
+                    text-xs
+                    text-text-muted
+                    mb-6
+                ">
+                    Postado em {story.date} por {story.author}
+                </p>
 
-            <div className="prose prose-neutral max-w-none">
-                <p>{story.epigraph}</p>
-            </div>
+                {/* Epígrafe  */}
+                {story.epigraph && (
+                    <p className="
+                        text-base mb:text-lg
+                        leading-relaxed
+                        text-text-main
+                        mb-8
+                        md:max-w-2xl
+                    ">
+                        {story.epigraph}
+                    </p>
+                )}
 
-            <Link
-                to={`/${story.genre}/${story.slug}`}
-                className="inline-block mt-8 text-sm border-b border-neutral-800 hover:border-neutral-400 transition"
-            >
-                Continuar leitura →
-            </Link>
-        </div>
+                {/* CTA  */}
+                <Link 
+                    to={`/${story.genre}/${story.slug}`}
+                    className="
+                        inline-block
+                        text-sm
+                        text-accent
+                        border-b
+                        border-transparent
+                        hover:border-accent
+                        transition
+                    "
+                >
+                    Continuar leitura →
+                </Link>
+        </section>
     )
 }
