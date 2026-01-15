@@ -1,10 +1,9 @@
-import { formatDateTime } from '../../utils/formatDateTime.js';
 
 export default function ChangelogEntry({
     title,
     description,
     items=[],
-    date = formatDateTime(),
+    date,
 }) {
     return (
         <article 
@@ -22,7 +21,7 @@ export default function ChangelogEntry({
                     text-text-muted
                 "
             >
-                {date}            
+                {date}          
             </time>
 
             <h3 className="
