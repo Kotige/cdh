@@ -8,8 +8,15 @@ export default function StoryPreview({
     slug,
 }) {
     return (
-        <article className='py-8'>
-            <h2 className='text-xl font-medium leading-snug mb-2'>
+        <article className="
+            bg-bg-surface
+            rounded-lg
+            px-6 py-6
+            mb-6
+            transition
+            hover:bg-bg-elevated
+        ">
+            <h2 className='text-xl font-medium leading-snug mb-2 text-text-main'>
                 <Link to={`/contos/${slug}`}
                     className='hover:underline underline-offset-4'
                 >
@@ -17,11 +24,11 @@ export default function StoryPreview({
                 </Link>
             </h2>
 
-            <p className='mb-3 text-neutral-700 dark:text-neutral-300'>
+            <p className='mb-4 text-text-muted leading-relaxed'>
                 {excerpt}
             </p>
 
-            <div className='text-sm text-neutral-500 dark:text-neutral-400'>
+            <div className='text-sm text-text-muted'>
                 {readingTime} min · por {author}
             </div>
 

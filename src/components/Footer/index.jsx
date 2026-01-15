@@ -5,7 +5,7 @@ import { FaInstagram, FaGithub, FaTiktok } from "react-icons/fa";
 export default function Footer() {
     return (
         <footer className="
-            mt-24 bg-bg-main text-text-muted
+            pt-24 bg-bg-main text-text-muted
         ">
             <div className="
                 mx-auto

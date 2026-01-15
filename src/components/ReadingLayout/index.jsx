@@ -4,9 +4,7 @@ export default function ReadingLayout({children, className="", immersive=false})
     return (
         <main className={`
             min-h-screeen
-            bg-neutral-50
             text-neutral-900
-            dark:bg-neutral-900
             dark:text-neutral-100
             mx-auto
             ${immersive ? "max-w-none md:max-w-5xl" : "max-w-none"}

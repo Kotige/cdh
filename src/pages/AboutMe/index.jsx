@@ -1,56 +1,74 @@
-import ReadingHeader from "../../components/ReadingHeader";
 import ReadingLayout from "../../components/ReadingLayout";
 import StoryContent from "../../components/StoryContent";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 
 export default function AboutMe() {
-    const hasPhoto = false;
-
     return (
         <>
             <Navbar />
 
-            <ReadingLayout>
-                <div className={`
-                    grid gap-10 ${hasPhoto ? "lg:grid-cols[2fr_1fr]" : "grid-cols-1"}
-                `} 
-                >
-                    {/* Texto  */}
-                    <StoryContent>
-                        <p>
-                            Este é um espaço onde escrita e código se encontram. Um lugar para histórias, experiências e aprendizado contínuo.
-                        </p>
+            <main className="bg-bg-main py-10">
+                <ReadingLayout>
+                    <div className="
+                        bg-bg-surface
+                        rounded-lg
+                        px-6 py-10
+                        md:px-10
+                        max-w-3xl
+                        mx-auto
+                    ">
+                        <StoryContent>
 
-                        <p>
-                            Me chamo Vítor Barra. Sou escritor por inclinação e programador por decisão.
-                        </p>
+                            {/* Marcador editorial  */}
+                            <span className="
+                                block
+                                text-xs
+                                tracking-widest
+                                uppercase
+                                text-text-muted
+                                mb-10
+                            ">
+                                Sobre o Kernel
+                            </span>
 
-                        <p>
-                            Este blog também é parte do meu processo de aprendizado como desenvolvedor frontend. Cada componente, refatoração e melhoria registrada aqui representa um avanço real.
-                        </p>
+                            {/* Bloco 1 - Abertura  */}
+                            <p className="text-text-main text-lg leading-relaxed mb-4">
+                                Kernel é um espaço criado para abrigar histórias, ideias e processos. Um lugar onde a escrita não compete por atenção e o tempo do leitor é tratado como algo valioso.
+                            </p>
+                            <p className="text-text-main leading-relaxed mb-12">
+                                Aqui, o texto vem antes da interface. O silêncio vem antes do excesso. Ler não é um gesto apressado, mas um encontro.
+                            </p>
 
-                        <p>
-                            A ideia é criar um espaço que cresça junto comigo — como autor, como programador e como alguém interessado em construir coisas com significado.
-                        </p>
-                    </StoryContent>
+                            {/* Bloco 2 - O que vive aqui  */}
+                            <p className="text-text-main text-lg leading-relaxed mb-4">
+                                As histórias publicadas neste site transitam entre fantasia, ficção científica, terror e outros territórios narrativos. Nem sempre seguem fórmulas, nem sempre buscam respostas.
+                            </p>
+                            <p className="text-text-main leading-relaxed mb-12">
+                                Kernel não é um repositório de conteúdos, mas um arquivo em constante construção. Cada texto é publicado quando está pronto — não quando é urgente.
+                            </p>
 
-                    {/* Foto e Currículo  */}
-                    {hasPhoto && (
-                        <aside className="flex flex-col gap-4">
-                            <div className="aspect-[3/4] bg-neutral-200 rounded-md" />
-                            <a 
-                                href="/curriculo.pdf" 
-                                target="_blank" 
-                                className="inline-flex justify-center rounded-md border border-neutral-800 px-4 py-2 text-sm hover:bg-neutral-900 hover:text-white transition"
-                            >
-                                Ver Currículo
-                            </a>
-                        </aside>
-                    )}
+                            {/* Bloco 3 - O autor  */}
+                            <p className="text-text-main text-lg leading-relaxed mb-4">
+                                Me chamo Vítor Barra. Escrevo por inclinação e construo por decisão. A escrita sempre esteve presente; o código veio como ferramenta para dar forma, estrutura e permanência às ideias.
+                            </p>
 
-                </div>
-            </ReadingLayout>
+                            <p className="text-text-main leading-relaxed mb-12">
+                                Este blog também faz parte do meu processo como desenvolvedor web. Cada componente, ajuste de layout e refatoração carrega aprendizado real e intencional.
+                            </p>
+
+                            {/* Bloco 4 - Encerramento  */}
+                            <p className="text-text-main text-lg leading-relaxed mb-4">
+                                Kernel cresce aos poucos, acompanhando quem o escreve. Não busca velocidade, alcance ou ruído mas coerência entre forma e conteúdo.
+                            </p>
+
+                            <p className="text-text-main leading-relaxed mb-12">
+                                As histórias estão disponíveis quando você quiser voltar a elas.
+                            </p>
+                        </StoryContent>
+                    </div>
+                </ReadingLayout>
+            </main>
 
             <Footer />
         </>

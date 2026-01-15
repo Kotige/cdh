@@ -4,7 +4,6 @@ import { stories } from "../../data/stories";
 import ReadingHeader from "../../components/ReadingHeader";
 import ReadingLayout from "../../components/ReadingLayout";
 import StoryPreview from "../../components/StoryPreview"; 
-import { use } from "react";
 
 const genreMeta = {
     fantasia: {
@@ -27,50 +26,67 @@ export default function CategoryPage() {
 
     const filteredStories = stories.filter(
         (story) => story.genre === genre
-    );
+    ).slice().reverse();
 
     if (!meta) {
         return (
-            <ReadingLayout>
-                <p>Categoria não encontrada.</p>
+            <div className="bg-bg-main min-h-screen">
+                <ReadingLayout>
+                <p className="
+                    text-text-muted
+                ">
+                    Essa categoria não existe — ou ainda não foi escrita.
+                </p>
             </ReadingLayout>
+            </div>
         );
     }
 
     return (
-        <>
-            <ReadingHeader title={meta.title} />
+        <div className="bg-bg-main min-h-screen">
+            <ReadingHeader title={""} />
             <ReadingLayout>
-                <header className="text-3xl font-semibold mb-4">
-                    <h1>
+                {/* Prefácio da Categoria */}
+                <header className="mb-12 max-w-2xl">
+
+                    <h1 className="
+                        font-serif
+                        text-3xl
+                        text-text-main
+                        mb-4
+                    ">
                         {meta.title}
                     </h1>
 
-                    <p className="text-neutral-600 dark:text-neutral-400 max-w-prose">
+                    <p className="
+                        text-base
+                        leading-relaxed
+                        text-text-muted
+                        ">
                         {meta.description}
                     </p>
                 </header>
 
-                <section>
-                    {filteredStories.map((story, index) => (
-                        <div key={story.slug}>
-                            <StoryPreview 
-                                slug={story.slug}
-                                title={story.title}
-                                excerpt={story.epigraph}
-                                readingTime={`${story.readingTime}`}
-                                author={story.author}
-                            />
-                        </div>
+                {/* Sumário  */}
+                <section className="space-y-10">
+                    {filteredStories.map((story) => (
+                        <StoryPreview
+                            key={story.slug}
+                            slug={story.slug}
+                            title={story.title}
+                            excerpt={story.epigraph}
+                            readingTime={story.readingTime}
+                            author={story.author}
+                        />
                     ))}
 
                     {filteredStories.length === 0 && (
-                        <p className="text-neutral-500">
-                            Nenhuma história encontrada nesta categoria ainda.
+                        <p className="text-text-muted italic">
+                            Esta seção ainda está em silêncio. As histórias virão.
                         </p>
                     )}
                 </section>
             </ReadingLayout>
-        </>
+        </div>
     )
 }
