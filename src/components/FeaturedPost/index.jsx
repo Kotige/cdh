@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
 export default function FeaturedPost({ story }) {
+
+    const formattedDate = new Date(story.date).toLocaleDateString("pt-BR");
+
     if (!story) return null;
 
     return (
@@ -8,7 +11,7 @@ export default function FeaturedPost({ story }) {
             className="
                 bg-bg-surface
                 px-6 py-10
-                md:px:10 md:py-14
+                md:px-10 md:py-14
                 lg:px-14
             ">
                 {/* Selo Editorial  */}
@@ -43,25 +46,25 @@ export default function FeaturedPost({ story }) {
                     text-text-muted
                     mb-6
                 ">
-                    Postado em {story.date} por {story.author}
+                    Postado em {formattedDate} por {story.author}
                 </p>
 
                 {/* Epígrafe  */}
                 {story.epigraph && (
                     <p className="
-                        text-base mb:text-lg
+                        text-base md:text-lg
                         leading-relaxed
                         text-text-main
                         mb-8
                         md:max-w-2xl
                     ">
-                        {story.epigraph}
+                        {story.epigraph.text}
                     </p>
                 )}
 
                 {/* CTA  */}
                 <Link 
-                    to={`/${story.genre}/${story.slug}`}
+                    to={`/${story.genre.slug}/${story.slug}`}
                     className="
                         inline-block
                         text-sm

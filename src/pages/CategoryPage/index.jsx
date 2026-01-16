@@ -21,11 +21,11 @@ const genreMeta = {
 };
 
 export default function CategoryPage() {
-    const { genre } = useParams();
-    const meta = genreMeta[genre];
+    const { genreSlug } = useParams();
+    const meta = genreMeta[genreSlug];
 
     const filteredStories = stories.filter(
-        (story) => story.genre === genre
+        (story) => story.genre.slug === genreSlug
     ).slice().reverse();
 
     if (!meta) {
@@ -44,7 +44,7 @@ export default function CategoryPage() {
 
     return (
         <div className="bg-bg-main min-h-screen">
-            <ReadingHeader title={""} />
+            <ReadingHeader title={`Arquivo — ${meta.title}`} />
             <ReadingLayout>
                 {/* Prefácio da Categoria */}
                 <header className="mb-12 max-w-2xl">
@@ -73,8 +73,9 @@ export default function CategoryPage() {
                         <StoryPreview
                             key={story.slug}
                             slug={story.slug}
+                            genreSlug={story.genre.slug}
                             title={story.title}
-                            excerpt={story.epigraph}
+                            excerpt={story.epigraph?.text ?? ""}
                             readingTime={story.readingTime}
                             author={story.author}
                         />

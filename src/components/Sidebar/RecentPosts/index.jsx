@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
 export default function RecentPosts({ posts }) {
+
+    const formatDate = (date) => new Date(date).toLocaleDateString("pt-BR");
+
     return (
         <section className="
             bg-bg-surface
@@ -21,7 +24,7 @@ export default function RecentPosts({ posts }) {
                 {posts.map((post) => (
                     <li key={post.slug}>
                         <Link
-                            to={`/${post.genre}/${post.slug}`}
+                            to={`/${post.genre.slug}/${post.slug}`}
                             className="
                                 block
                                 font-serif
@@ -39,7 +42,7 @@ export default function RecentPosts({ posts }) {
                             text-xs
                             text-text-muted
                         ">
-                            Publicado em {post.date}
+                            Publicado em {formatDate(post.date)}
                         </span>
                     </li>
                 ))}

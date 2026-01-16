@@ -28,7 +28,7 @@ export default function Categories() {
                 {categories.map(({slug, title, genre}) => (
                     <li key={slug}>
                         <Link
-                            to={`/${genre}/${slug}`}
+                            to={`/${genre.slug}/${slug}`}
                             className="text-sm text-text-main leading-snug hover:underline"
                         >
                             {title}

@@ -15,8 +15,14 @@ export default function StoryPage() {
 
     const [immersive, setImmersive] = useState(false);
 
-    const { slug } = useParams();
-    const story = stories.find((s) => s.slug === slug);
+    const { genreSlug, slug } = useParams();
+
+    const story = stories.find(
+        story =>
+                story.slug === slug &&
+                story.genre.slug === genreSlug
+    );
+
     
     if (!story) {
         return( <p className="p-8 text-center text-text-muted bg-bg-main">
@@ -24,12 +30,16 @@ export default function StoryPage() {
             </p>);
     }
 
+    const previousStory = story.previousChapter ? stories.find(s => s.slug === story.previousChapter) : null;
+
+    const nextStory = story.nextChapter ? stories.find(s => s.slug === story.nextChapter) : null;
+
     return (
         <div className={`min-h-screen bg-bg-main transition-colors duration-300`}>
         {/* Header de Leitura  */}
         {!immersive && (
             <ReadingHeader 
-                title={story.genre}
+                title={story.genre.label}
             />
         )}
 
@@ -39,8 +49,8 @@ export default function StoryPage() {
             <StoryHeader 
                 series={story.series.title}
                 title={story.title}
-                epigraph={!immersive ? story.epigraph : undefined}
-                epigraphAuthor={story.epigraphAuthor}
+                epigraph={!immersive ? story.epigraph?.text : undefined}
+                epigraphAuthor={!immersive ? story.epigraph?.author : undefined}
                 author={story.author}
                 date={story.date}
                 readingTime={story.readingTime}
@@ -51,7 +61,7 @@ export default function StoryPage() {
                 {story.content.map((block, index) => {
                     if (block.type === "paragraph") {
                         return (
-                            <p key={index} className="mb-4 leading-relaxed">
+                            <p key={index} className="mb-4 leading-relaxed text-reading-text">
                                 {block.dropCap && <DropCap letter={block.dropCap} />}
                                 {block.text}
                             </p>
@@ -75,18 +85,24 @@ export default function StoryPage() {
 
             {/* Navegação  */}
             <StoryNavigation 
-                previous={{
-                    href: "/publications/o-misterio-da-floresta-encantada",
-                    title: "O Mistério da Floresta Encantada"
-                }}
-                next={{
-                    href: "/publications/o-segredo-do-castelo-antigo",
-                    title: "O Segredo do Castelo Antigo"
-                }}
+                previous={
+                    previousStory ? {
+                        href: `/${previousStory.genre.slug}/${previousStory.slug}`,
+                        title: previousStory.title
+                    }
+                    : null
+                }
+                next={
+                    nextStory ? {
+                        href: `/${nextStory.genre.slug}/${nextStory.slug}`,
+                        title: nextStory.title
+                    }
+                    : null
+                }
                 series={{
-                    title: story.series.title,
-                    href: `/series/${story.series.slug}`
-                }}
+                        title: story.series.title,
+                        href: `/series/${story.series.slug}`
+                    }}
             />
         </ReadingLayout>
 

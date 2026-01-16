@@ -1,18 +1,23 @@
 export const stories = [
     {
         slug: "arquivos-da-madrugada",
-        genre: "ficcao-cientifica",
+        genre: {
+            label: "Ficção Científica",
+            slug: "ficcao-cientifica",
+        },
         series: {
             title: "Os Escritos de Elisa Barbosa",
             slug: "os-escritos-de-elisa-barbosa",
         },
         title: "Capítulo I: Arquivos da Madrugada",
-        epigraph: "Há coisas que só podem ser ditas no papel.",
-        epigraphAuthor: "Clarice Lispector",
+        epigraph: {
+            text: "Há coisas que só podem ser ditas no papel.",
+            author: "Clarice Lispector",
+        },
         author: "Vítor Barra",
-        date: "16-01-2026",
+        date: "2026-01-16",
         readingTime: 18,
-        previousChapter: "",
+        previousChapter: null,
         nextChapter: "a-noite-oficial-dos-ovnis",
 
         content: [
@@ -39,7 +44,7 @@ export const stories = [
             },
             {
                 type: "paragraph",
-                text: "Miguel esticou as folhas sobre a penteadeira e reconheceu de imediato a caligrafia rebuscada de sua avó Eliza. Pareciam ser um conjunto de cartas, mas não estavam destinadas a ninguém em específico. Um olhar mais atento deu ao rapaz a impressão de que podiam ser páginas arrancadas de um diário já que a barra esquerda da maioria das folhas parecia ter sido rasgada.",
+                text: "Miguel esticou as folhas sobre a penteadeira e reconheceu de imediato a caligrafia rebuscada de sua avó Elisa. Pareciam ser um conjunto de cartas, mas não estavam destinadas a ninguém em específico. Um olhar mais atento deu ao rapaz a impressão de que podiam ser páginas arrancadas de um diário já que a barra esquerda da maioria das folhas parecia ter sido rasgada.",
             },
             {
                 type: "paragraph",
@@ -83,7 +88,7 @@ export const stories = [
             },
             {
                 type: "paragraph",
-                text: "João faleceu cinco anos depois de Eliza. E, ajudando o pai a limpar a casa do avô, Miguel encontrou um novo conjunto de folhas amareladas preenchida pela caligrafia de Eliza. Dessa vez, entretanto, os escritos de sua avó estavam guardados em um saco plástico pregado com fitas atrás da fotografia de casamento de Eliza e João.",
+                text: "João faleceu cinco anos depois de Elisa. E, ajudando o pai a limpar a casa do avô, Miguel encontrou um novo conjunto de folhas amareladas preenchidas pela caligrafia de Elisa. Dessa vez, entretanto, os escritos de sua avó estavam guardados em um saco plástico pregado com fitas atrás da fotografia de casamento de Elisa e João.",
             },
             {
                 type: "paragraph",
@@ -91,11 +96,11 @@ export const stories = [
             },
             {
                 type: "paragraph",
-                text: "Na noite que se seguiu o dia de faxina pesada, Miguel não dormiu bem. Sonhou com seus avós vigiando a gaveta do seu guarda-roupas onde ele havia escondido os escritos de Eliza. De tempos em tempos acordava sobressaltado quando achava ter ouvido alguém chamando seu nome. E por mais que tentasse se distrair com algum filme em seu notebook ou músicas de meditação, o sono teimava em escapar-lhe; sua atenção estava totalmente voltada para a gaveta e o seu misterioso conteúdo.",
+                text: "Na noite que se seguiu o dia de faxina pesada, Miguel não dormiu bem. Sonhou com seus avós vigiando a gaveta do seu guarda-roupas onde ele havia escondido os escritos de Elisa. De tempos em tempos acordava sobressaltado quando achava ter ouvido alguém chamando seu nome. E por mais que tentasse se distrair com algum filme em seu notebook ou músicas de meditação, o sono teimava em escapar-lhe; sua atenção estava totalmente voltada para a gaveta e o seu misterioso conteúdo.",
             },
             {
                 type: "paragraph",
-                text: "Quando finalmente desistiu de dormir, Miguel se levantou, abriu a janela do quarto e deixou com que a brisa morna do verão fizesse as cortinas dançarem. Ele pegou duas das folhas de Eliza e as colocou sobre sua escrivaninha. Seu coração começou a chacoalhar em seu peito e a ansiedade lhe invadiu por completo. Miguel se esqueceu — ou apenas ignorou — a promessa que fizera e começou a ler o que sua avó havia se dado ao trabalho de registrar.",
+                text: "Quando finalmente desistiu de dormir, Miguel se levantou, abriu a janela do quarto e deixou com que a brisa morna do verão fizesse as cortinas dançarem. Ele pegou duas das folhas de Elisa e as colocou sobre sua escrivaninha. Seu coração começou a chacoalhar em seu peito e a ansiedade lhe invadiu por completo. Miguel se esqueceu — ou apenas ignorou — a promessa que fizera e começou a ler o que sua avó havia se dado ao trabalho de registrar.",
             },
             {
                 type: "paragraph",
@@ -123,7 +128,7 @@ export const stories = [
             },
             {
                 type: "paragraph",
-                text: "Lembro-me desse dia com muita clareza. Era madrugada e eu era a legista de plantão. Estava fazendo a autópsia do cadáver de um indigente que seria enviado para a escola de medicina quando Sérgio me chamou na recepção do necrotério. Embora ainda fosse quatro horas da manhã, O Dia já havia sido distribuído e a manchete anunciava em letras garrafais o suicídio do presente Getúlio Vargas.",
+                text: "Lembro-me desse dia com muita clareza. Era madrugada e eu era a legista de plantão. Estava fazendo a autópsia do cadáver de um indigente que seria enviado para a escola de medicina quando Sérgio me chamou na recepção do necrotério. Embora ainda fosse quatro horas da manhã, O Dia já havia sido distribuído e a manchete anunciava em letras garrafais o suicídio do presidente Getúlio Vargas.",
             },
             {
                 type: "paragraph",
@@ -131,7 +136,7 @@ export const stories = [
             },
             {
                 type: "paragraph",
-                text: "Miguel estava completamente incrédulo com as coisas que estava lendo. Não sabia se acreditava naquilo ou não. Sua avó era professora — ou pelo menos era isso que todos diziam — e não médica. A única explicação que o rapaz conseguia formular para tudo isso é que Eliza era uma boa escritora e estava narrando uma história inventada.",
+                text: "Miguel estava completamente incrédulo com as coisas que estava lendo. Não sabia se acreditava naquilo ou não. Sua avó era professora — ou pelo menos era isso que todos diziam — e não médica. A única explicação que o rapaz conseguia formular para tudo isso é que Elisa era uma boa escritora e estava narrando uma história inventada.",
             },
             {
                 type: "paragraph",
@@ -530,7 +535,7 @@ export const stories = [
             },
             {
                 type: "paragraph",
-                text: "Nas periferias do Rio de Janeiro, meus pés já estavam cheios de bolhas e doíam tanto que eu não conseguia mais andar. Me sentei numa calçada e tirei os sapatos para que meus pés feridos descansarem. João se sentou ao meu lado e suspirou fundo.",
+                text: "Nas periferias do Rio de Janeiro, meus pés já estavam cheios de bolhas e doíam tanto que eu não conseguia mais andar. Me sentei numa calçada e tirei os sapatos para que meus pés feridos descansassem. João se sentou ao meu lado e suspirou fundo.",
             },
             {
                 type: "paragraph",

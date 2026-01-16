@@ -12,8 +12,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:genre/:slug" element={<StoryPage />}/>
-        <Route path="/:genre" element={<CategoryPage />}/>
+        <Route path="/:genreSlug/:slug" element={<StoryPage />}/>
+        <Route path="/:genreSlug" element={<CategoryPage />}/>
         <Route path="/aboutme" element={<AboutMe />} />
         <Route path="/changelog" element={<Changelog />} />
       </Routes>

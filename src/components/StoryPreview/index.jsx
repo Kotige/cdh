@@ -6,6 +6,7 @@ export default function StoryPreview({
     readingTime,
     author,
     slug,
+    genreSlug,
 }) {
     return (
         <article className="
@@ -17,7 +18,7 @@ export default function StoryPreview({
             hover:bg-bg-elevated
         ">
             <h2 className='text-xl font-medium leading-snug mb-2 text-text-main'>
-                <Link to={`/contos/${slug}`}
+                <Link to={`/${genreSlug}/${slug}`}
                     className='hover:underline underline-offset-4'
                 >
                     {title}
