@@ -9,12 +9,12 @@ export default function ImmersiveToggle({immersive, onToggle}) {
                             right-4 
                             z-50 
                             rounded-full 
-                            bg-neutral-900
-                            text-white
+                            bg-accent
+                            text-reading-bg
                             p-3
                             shadow-lg
-                            hover:bg-neutral-800
-                            transition 
+                            hover:bg-accent-hover
+                            transition-colors 
                 "       
         >
             {immersive ? <Shrink size={18} /> : <Expand size={18} />}

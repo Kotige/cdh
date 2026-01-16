@@ -3,11 +3,7 @@ export default function AuthorNote({title="Nota do Autor", children }) {
         <aside className="
             mt-16
             rounded-lg
-            border
-            border-neutral-200
-            dark:border-neutral-800
-            bg-neutral-50
-            dark:bg-neutral-900
+            bg-bg-elevated/10
             px-5
             py-4
         ">
@@ -17,17 +13,15 @@ export default function AuthorNote({title="Nota do Autor", children }) {
                 font-medium
                 uppercase
                 tracking-wider
-                text-neutral-600
-                dark:text-neutral-400
+                text-accent
             ">
                 {title}
             </h2>
             <div className="
                 prose
                 prose-sm
-                prose-neutral
-                dark:prose-invert
                 max-w-none
+                text-reading-text
             ">
                 {children}
             </div>

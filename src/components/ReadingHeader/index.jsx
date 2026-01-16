@@ -4,11 +4,9 @@ export default function ReadingHeader({title="Kernel"}) {
     return (
         <header className="
             sticky top-0 z-40
-            bg-neutral-50/90
-            dark:bg-neutral-900/90
+            bg-bg-surface/90
             backdrop-blur
-            border-b border-neutral-200
-            dark:border-neutral-800
+            border-b border-border-subtle
         ">
             <div className="
                 mx-auto
@@ -21,11 +19,9 @@ export default function ReadingHeader({title="Kernel"}) {
                 text-sm
             ">
                 <Link to="/" className="
-                    text-neutral-600
-                    dark:text-neutral-400
-                    hover:text-neutral-900
-                    dar:hover:text-neutral-100
-                    transition
+                    text-text-muted
+                    hover:text-accent
+                    transition-colors
                 ">
                     ← Início
                 </Link>
@@ -33,8 +29,7 @@ export default function ReadingHeader({title="Kernel"}) {
                 <span className="
                     font-medium
                     tracking-wide
-                    text-neutral-700
-                    dark:text-neutral-300
+                    text-text-main
                 ">
                     {title}
                 </span>

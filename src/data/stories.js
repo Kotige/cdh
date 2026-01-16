@@ -8,6 +8,7 @@ export const stories = [
         },
         title: "Capítulo I: A Biblioteca que Sussurrava",
         epigraph: "Algumas histórias são sussurradas nas sombras das páginas.",
+        epigraphAuthor: "Joel Santana",
         author: "Vítor Barra",
         date: "12-01-2026",
         readingTime: 12,

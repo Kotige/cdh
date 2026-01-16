@@ -7,8 +7,7 @@ export default function DropCap({letter}) {
             font-serif
             text-6xl
             leading-none
-            text-neutral-800
-            dark:text-neutral-200
+            text-accent
         "
             aria-hidden="true"
         >

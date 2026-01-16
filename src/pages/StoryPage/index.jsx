@@ -19,21 +19,28 @@ export default function StoryPage() {
     const story = stories.find((s) => s.slug === slug);
     
     if (!story) {
-        return <p className="p-8 text-center">Conto não encontrado</p>;
+        return( <p className="p-8 text-center text-text-muted bg-bg-main">
+                Conto não encontrado.
+            </p>);
     }
 
     return (
-        <>
+        <div className={`min-h-screen bg-bg-main transition-colors duration-300`}>
         {/* Header de Leitura  */}
-        {!immersive && <ReadingHeader title={story.genre}/>}
+        {!immersive && (
+            <ReadingHeader 
+                title={story.genre}
+            />
+        )}
 
         {/* Corpo de Leitura  */}
-        <ReadingLayout>
+        <ReadingLayout className="bg-reading-bg">
             {/* Abertura  */}
             <StoryHeader 
                 series={story.series.title}
                 title={story.title}
-                epigraph={story.epigraph}
+                epigraph={!immersive ? story.epigraph : undefined}
+                epigraphAuthor={story.epigraphAuthor}
                 author={story.author}
                 date={story.date}
                 readingTime={story.readingTime}
@@ -44,14 +51,16 @@ export default function StoryPage() {
                 {story.content.map((block, index) => {
                     if (block.type === "paragraph") {
                         return (
-                            <p key={index}>
+                            <p key={index} className="mb-4 leading-relaxed">
                                 {block.dropCap && <DropCap letter={block.dropCap} />}
                                 {block.text}
                             </p>
                         );
                     }
                     if (block.type === "blockquote") {
-                        return <blockquote key={index}>{block.text}</blockquote>;
+                        return( <blockquote key={index} className="border-l-4 border-accent pl-4 italic my-6">
+                            {block.text}
+                            </blockquote>);
                     }
                     return null;
                 })}
@@ -86,6 +95,6 @@ export default function StoryPage() {
             onToggle={() => setImmersive(!immersive)}
         />
 
-        </>
+        </div>
     )
 }

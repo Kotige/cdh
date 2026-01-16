@@ -2,13 +2,14 @@ export default function StoryHeader(
     {
         title,
         epigraph,
+        epigraphAuthor,
         author,
         date,
         readingTime,
         series,
     }) {
         return (
-            <header className="mb-10">
+            <header className="mb-10 flex flex-col items-center">
                 {/* Série */}
                 {series && (
                     <p className="
@@ -16,8 +17,8 @@ export default function StoryHeader(
                         text-sm
                         uppercase
                         tracking-widest
-                        text-neutral-500
-                        dark:text-neutral-400
+                        text-text-muted
+                        text-center
                     ">
                         {series}
                     </p>
@@ -28,8 +29,8 @@ export default function StoryHeader(
                     text-3xl
                     sm:text-4xl
                     leading-tight
-                    text-neutral-900
-                    dark:text-neutral-100
+                    text-accent
+                    text-center
                 ">
                     {title}
                 </h1>
@@ -40,10 +41,17 @@ export default function StoryHeader(
                         mt-6
                         max-w-prose
                         italic
-                        text-neutral-600
-                        dark:text-neutral-400
+                        text-text-muted
+                        border-b
+                        border-t
+                        border-border-subtle
+                        p-5
+                        text-center
                     ">
                         "{epigraph}"
+                        <p  className="text-sm text-right ">
+                            — {epigraphAuthor}
+                        </p>
                     </blockquote>
                 )}
 
@@ -52,8 +60,8 @@ export default function StoryHeader(
                     font-sans
                     mt-6
                     text-sm
-                    text-neutral-500
-                    dark:text-neutral-400
+                    text-text-muted
+                    text-center
                 ">
                     por {author} • {date} • {readingTime} min de leitura
                 </p>
@@ -63,8 +71,8 @@ export default function StoryHeader(
                     mt-8
                     h-px
                     w-16
-                    bg-neutral-300
-                    dark:bg-neutral-700
+                    bg-border-subtle
+                    hidden
                 "/>
             </header>
         )

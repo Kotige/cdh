@@ -8,19 +8,19 @@ export default function StoryNavigation({previous, next, series}) {
             mt-20
             pt-8
             border-t
-            border-neutral-200
-            dark:border-neutral-800
+            border-border-subtle
         "
             aria-label="Navegação entre contos"
         >
             <div className="
                 grid
-                gap-6
+                gap-8
                 sm:grid-cols-2
             ">
                 {/* Anterior */}
                 {previous ? (
-                    <Link to={previous.href} className="
+                    <Link to={previous.href} 
+                    className="
                         group
                         text-left
                         block
@@ -31,8 +31,7 @@ export default function StoryNavigation({previous, next, series}) {
                             text-xs
                             uppercase
                             tracking-widest
-                            text-neutral-500
-                            dark:text-neutral-400
+                            text-accent
                         ">
                             ← Conto anterior
                         </span>
@@ -41,9 +40,9 @@ export default function StoryNavigation({previous, next, series}) {
                             block
                             font-serif
                             text-lg
-                            text-neutral-900
-                            dark:text-neutral-100
-                            group-hover:underline
+                            text-accent
+                            group-hover:text-accent-hover
+                            transition-colors
                         ">
                             {previous.title}
                         </span>
@@ -54,11 +53,11 @@ export default function StoryNavigation({previous, next, series}) {
 
                 {/* Próximo  */}
                 {next && (
-                    <Link to={next.href} className="
-                        group
-                        text-left
-                        sm:text-right
-                        block
+                    <Link to={next.href} 
+                        className="
+                            group
+                            sm:text-right
+                            block
                     ">
                         <span className="
                             block
@@ -66,8 +65,7 @@ export default function StoryNavigation({previous, next, series}) {
                             text-xs
                             uppercase
                             tracking-widest
-                            text-neutral-500
-                            dark:text-neutral-400
+                            text-accent
                         ">
                             Próximo conto →
                         </span>
@@ -76,9 +74,9 @@ export default function StoryNavigation({previous, next, series}) {
                             block
                             font-serif
                             text-lg
-                            text-neutral-900
-                            dark:text-neutral-100
-                            group-hover:underline
+                            text-accent
+                            group-hover:text-accent-hover
+                            transition-colors
                         ">
                             {next.title}
                         </span>
@@ -91,9 +89,9 @@ export default function StoryNavigation({previous, next, series}) {
                 <div className="mt-10 text-center">
                     <Link to={series.href} className="
                         text-sm
-                        text-neutral-600
-                        dark:text-neutral-400
-                        hover:underline
+                        text-accent
+                        hover:text-accent-hover
+                        transition-colors
                     ">
                         Ver todos os contos da série "{series.title}"
                     </Link>
