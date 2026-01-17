@@ -1,26 +1,21 @@
-import { formatDateTime } from "../utils/formatDateTime";
-
 export const changelogData = [
     {
         period: "Janeiro de 2026",
         entries: [
             {
-                date:"12 de Janeiro de 2025",
-                title: "Initial Release",
-                description: "We are excited to announce the initial release of our application. This version includes the core features and functionalities to get you started.",
+                date:"16 de Janeiro de 2025",
+                title: "v1.0 Publicação",
+                description: "Kernel oficialmente online. Este changelog registra o momento em que o projeto deixa de existir apenas no desenvolvimento e passa a ser um site público, funcional e focado na experiência de leitura.",
                 items: [
-                    "User authentication and profile management",
-                    "Basic dashboard with analytics",
+                    "Estrutura inicial do projeto em React configurada",
+                    "Sistema de rotas implementado com React Router",
+                    "Renderização dinâmica de histórias a partir de dados estruturados",
+                    "Modo imersivo com controle de estado",
+                    "Estilização global com Tailwind CSS",
+                    "Build de produção gerado e validado",
+                    "Deploy configurado na Hostinger",
+                    "Certificado SSL ativado (HTTPS)",
                 ]
-            },
-            {
-                date: "15 de Janeiro de 2025",
-                title: "Version 1.1.0 - New Features",
-                description: "In this update, we have added several new features based on user feedback to enhance your experience.",
-                items: [
-                    "Added dark mode support",
-                    "Introduced new analytics widgets",
-                ],
             },
         ],
     },
